@@ -1,14 +1,30 @@
+from time import sleep
+from sense_hat import SenseHat
 #get_accelerometer_raw  gives x,y,z axis data
+#dont forget to change the values for the if statements
 
+sense = Sensehat()
+ref = sense.get_accelerometer_raw()
+x = ref['x']
+y = ref['y']
+z = ref['z']
 while True
-	if mild:
-		for i in range(100)
+	cur = sense.get_accelerometer_raw()
+	a = cur['x']
+	b = cur['y']
+	c = cur['z']
+	
+	difa = abs(x-a)
+	difb = abs(y-b)
+	difc = abs(z-c)
+	if difa > 5 or difb >5 or difc > 5:
+		for i in range(50)
 			sense.set_pixels(yellow)
-			sleep(100)
-			if severe:
+			sleep(0.1)
+			if difa >10 or difb > 10 or difc > 10:
 				break
-	if severe:
+	if difa > 10 or difb > 10 or difc > 10:
 		sense.set_pixels(red)
-		sleep(10000)
-	if safe:
+		sleep(10)
+	if difa < 5 or difb < 5 or difc < 5:
 		sense.set_pixels(green)
