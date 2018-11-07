@@ -6,6 +6,7 @@ import scipy.io
 
 def load_imiage(values,sense):
 	sense.set_pixels(values)
+	#i in range , j in range  , set pixels
 
 def clear_leds(sense):
 	sense.clear()
