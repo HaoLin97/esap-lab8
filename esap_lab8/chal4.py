@@ -2,6 +2,7 @@ from time import sleep
 from sense_hat import SenseHat
 #get_accelerometer_raw  gives x,y,z axis data
 #dont forget to change the values for the if statements
+#use sens.clear()
 
 sense = SenseHat()
 green = (0,255,0)
