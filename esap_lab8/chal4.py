@@ -21,14 +21,29 @@ while True:
 	difa = abs(x-a)
 	difb = abs(y-b)
 	difc = abs(z-c)
-	if difa > 5 or difb >5 or difc > 5:
-		for i in range(50):
-			sense.set_pixels(yellow)
-			sleep(0.1)
-			if difa >10 or difb > 10 or difc > 10:
-				break
-	if difa > 10 or difb > 10 or difc > 10:
-		sense.set_pixels(red)
-		sleep(10)
-	if difa < 5 or difb < 5 or difc < 5:
-		sense.set_pixels(green)
+	if difa > 0.3 or difb > 0.3 or difc > 0.3:
+                for i in range(50):
+                        sense.clear(yellow)
+                        cur = sense.get_accelerometer_raw()
+                        a = cur['x']
+                        b = cur['y']
+                        c = cur['z']
+
+                        difa = abs(x-a)
+                        difb = abs(y-b)
+                        difc = abs(z-c)
+
+                        if difa >0.5 or difb > 0.5 or difc > 0.5:
+                                break
+                        sleep(0.05)
+                        sense.clear()
+                        sleep(0.05)
+        if difa > 0.5 or difb > 0.5 or difc > 0.5:
+                for i in range(100):
+                        sense.clear(red)
+                        sleep(0.05)
+                        sense.clear()
+                        sleep(0.05)
+	if difa < 0.3 or difb < 0.3 or difc < 0.3:
+                sense.clear(green)
+
