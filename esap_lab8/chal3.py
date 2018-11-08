@@ -9,7 +9,7 @@ def add_dangerous_pixels(sense,nr_dang_pix):
 		y = np.random.randint(0,8)
 		candidate_pixel = (x,y)
 		dangerous_coord.append(candidate_pixel)
-return dangerous_coord
+	return dangerous_coord
 def check_collision(pixel):
 
         #goal_pixel = ([np.random.randint(0,8),np.random.randint(0,8)])
