@@ -4,9 +4,11 @@ from PIL import Image
 import numpy as np
 import scipy.io
 
-def load_imiage(values,sense):
-	sense.set_pixels(values)
-	#i in range , j in range  , set pixels
+def load_image(values,sense):
+        for i in range(0,7):
+                for j in range(0,7):
+                        sense.set_pixel(i,j,values[i][j])
+
 
 def clear_leds(sense):
 	sense.clear()
