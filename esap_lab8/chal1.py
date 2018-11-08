@@ -15,14 +15,15 @@ x = [255,0,0]
 o = [255,255,255]
 
 shape = [
-o,o,o,x,x,x,o,o,
+x,x,x,x,o,o,o,o,
 o,o,o,x,o,o,x,o,
 o,o,o,x,o,o,x,o,
 x,x,x,x,x,x,x,o,
 x,o,o,x,o,o,o,o,
-x,o,x,x,o,o,o,o,
+x,o,o,x,o,o,o,o,
 o,o,o,x,x,x,o,o,
 o,o,o,o,o,o,o,o,
+
 ]
 
 sense.set_pixels(shape)
